@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Frog(name,weight,speed,status) {
+        this.name = name;
+        this.getName = function () {
+            return this.name;
+        }
+        this.setName = function (Name) {
+            this.name = Name;
+        }
+        this.weight = weight;
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function (Weight) {
+            this.weight = Weight;
+        }
+        this.speed = speed;
+        this.getSpeed = function () {
+            return this.speed;
+        }
+        this.setSpeed = function (Speed) {
+            this.speed = Speed;
+        }
+        this.status = status;
+        this.getStatus = function () {
+            return this.status;
+        }
+        this.setStatus = function () {
+            this.status = Status;
+        }
+        this.sound = function (stringFrog) {
+            if (this.status) {
+                console.log(stringFrog);
+            }
+        }
+    }
+    let echxanh = new Frog('echxanh',2,5,true);
+    let echuong = new Frog('echuong,1,2,false');
+    
+    function Snake(name,weight,speed) {
+        this.name = name;
+        this.getName = function () {
+            return this.name;
+        }
+        this.setName = function () {
+            this.name = Name;
+        }
+        this.weight = weight;
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function () {
+            this.weight = Weight;
+        }
+        this.speed = speed;
+        this.getSpeed = function () {
+            return this.speed;
+        }
+        this.setSpeed = function () {
+            this.speed = Speed;
+        }
+        this.sound = function (stringSnake) {
+            console.log(stringSnake);
+        }
+        this.bite = function (frog) {
+            if (this.speed>frog.speed) {
+                console.log('Rắn' + this.name + 'đã cắn con ếch' + frog.name);
+            }
+            else {
+                console.log('Rắn' + this.name +'không cắn được con ếch' + frog.name);
+            }
+        }
+        this.eat = function (frog) {
+            if (frog.getStatus()) {
+                this.weight += frog.weight;
+                frog.setStatus(false);
+            }
+            else {
+                console.log('con ếch đã bị ăn');
+            }
+        }
+    }
+    let homangchua = new Snake('homangchua',5,7);
+</script>
+</body>
+</html>
